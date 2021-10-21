@@ -1,0 +1,31 @@
+.btn,
+input.btn {
+  position: relative;
+  display: block;
+  border: 2px solid $sec-color;
+  padding: 0.3rem 1.5rem;
+  border-radius: 30px;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 0.8rem;
+  letter-spacing: 0.09rem;
+  @include transition(0.5s, ease, 0s);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    z-index: -1000;
+  }
+  &:hover::before {
+    box-shadow: 0 0 0 20rem $sec-color;
+  }
+  &:hover {
+    color: $main-color;
+    background-color: $sec-color;
+  }
+}
